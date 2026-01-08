@@ -1,0 +1,209 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated to Urban Garden color palette */
+  --aquamarine: #2a9d8f;
+  --terracotta: #e76f51;
+  --cream: #f4f1de;
+  --golden: #e9c46a;
+  --steel-blue: #5c7a8a;
+  --fuchsia: #d45d79;
+  --amber: #bc6c25;
+  --neon-green: #83d475;
+  --dark-teal: #264653;
+  --light-beige: #f9f8f3;
+
+  --background: #f9f8f3;
+  --foreground: #264653;
+  --card: #ffffff;
+  --card-foreground: #264653;
+  --popover: #ffffff;
+  --popover-foreground: #264653;
+  --primary: #2a9d8f;
+  --primary-foreground: #ffffff;
+  --secondary: #e76f51;
+  --secondary-foreground: #ffffff;
+  --muted: #f4f1de;
+  --muted-foreground: #5c7a8a;
+  --accent: #83d475;
+  --accent-foreground: #264653;
+  --destructive: #e76f51;
+  --destructive-foreground: #ffffff;
+  --border: #e9c46a;
+  --input: #f4f1de;
+  --ring: #2a9d8f;
+  --chart-1: #2a9d8f;
+  --chart-2: #e76f51;
+  --chart-3: #83d475;
+  --chart-4: #e9c46a;
+  --chart-5: #d45d79;
+  --radius: 0.625rem;
+  --sidebar: #f9f8f3;
+  --sidebar-foreground: #264653;
+  --sidebar-primary: #2a9d8f;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #e76f51;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #e9c46a;
+  --sidebar-ring: #2a9d8f;
+}
+
+.dark {
+  --background: #1a2f2f;
+  --foreground: #f9f8f3;
+  --card: #264653;
+  --card-foreground: #f9f8f3;
+  --popover: #264653;
+  --popover-foreground: #f9f8f3;
+  --primary: #2a9d8f;
+  --primary-foreground: #1a2f2f;
+  --secondary: #e76f51;
+  --secondary-foreground: #f9f8f3;
+  --muted: #5c7a8a;
+  --muted-foreground: #e9c46a;
+  --accent: #83d475;
+  --accent-foreground: #1a2f2f;
+  --destructive: #e76f51;
+  --destructive-foreground: #1a2f2f;
+  --border: #5c7a8a;
+  --input: #264653;
+  --ring: #83d475;
+  --chart-1: #2a9d8f;
+  --chart-2: #e76f51;
+  --chart-3: #83d475;
+  --chart-4: #e9c46a;
+  --chart-5: #d45d79;
+  --sidebar: #264653;
+  --sidebar-foreground: #f9f8f3;
+  --sidebar-primary: #2a9d8f;
+  --sidebar-primary-foreground: #f9f8f3;
+  --sidebar-accent: #e76f51;
+  --sidebar-accent-foreground: #f9f8f3;
+  --sidebar-border: #5c7a8a;
+  --sidebar-ring: #83d475;
+}
+
+@theme inline {
+  --font-sans: "Karla", "Geist", "Geist Fallback";
+  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom animations and styles for Urban Garden theme */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes gearRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes leafFall {
+  0% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100px) rotate(360deg);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.6s ease-out;
+}
+
+.animate-gear-spin {
+  animation: gearRotate 20s linear infinite;
+}
+
+.animate-leaf-fall {
+  animation: leafFall 6s ease-in-out infinite;
+}
+
+/* Gradient utilities */
+.gradient-header {
+  background: linear-gradient(135deg, #2a9d8f 0%, #264653 100%);
+}
+
+.gradient-button {
+  background: radial-gradient(circle, #e76f51, #f4a261);
+}
+
+.gradient-card {
+  background: linear-gradient(to bottom right, #f4f1de, #e9c46a 30%);
+}
